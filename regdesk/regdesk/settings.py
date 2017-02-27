@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'regdesk',
         'USER': 'regdesk',
-        'PASSWORD': 'letitroll',
+        'PASSWORD': 'chunin',
         'HOST': 'localhost',
         'PORT': '',
     }

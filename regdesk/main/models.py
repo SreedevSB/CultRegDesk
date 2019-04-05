@@ -26,17 +26,17 @@ class Event(models.Model):
 
 class Participation(models.Model):
 	participent = models.ManyToManyField(Participent, null=True)
-	event = models.ForeignKey(Event, null=True)
+	event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
 	def __str__(self):
 		return self.event.name
 
 class Registration(models.Model):
-	participation = models.ForeignKey(Participation, null=True)
-	user = models.ForeignKey(User, null=True)
+	participation = models.ForeignKey(Participation, on_delete=models.CASCADE)
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	amount = models.IntegerField(default=0)
 
 class User_detail(models.Model):
 	section = models.CharField(max_length = 5)
 	phone_no = models.BigIntegerField(null = True)
-	user = models.OneToOneField(User)
+	user = models.OneToOneField(User,on_delete=models.CASCADE)

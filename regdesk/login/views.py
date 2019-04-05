@@ -6,7 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 # Create your views here.
 
 def index(request):
-	if request.user.is_authenticated():
+	if request.user.is_authenticated:
 		if('loc' not in request.GET):
 			return HttpResponseRedirect(redirect_to='/home/')
 		else:
@@ -27,7 +27,7 @@ def index(request):
 				return render(request, 'login/login.html', context)
 
 def submit(request):
-	if request.user.is_authenticated():
+	if request.user.is_authenticated:
 		if('loc' not in request.GET):
 			return HttpResponseRedirect(redirect_to='/home/')
 		else:
@@ -57,7 +57,7 @@ def submit(request):
 			return render(request, 'login/message.html', context)
 
 def lo(request):
-	if request.user.is_authenticated():
+	if request.user.is_authenticated:
 		logout(request)
 		context ={'message1':'Message', 'message2':'You have successfully logged out'}
 		return render(request, 'login/message.html', context)

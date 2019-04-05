@@ -44,13 +44,13 @@ INSTALLED_APPS = [
     'home',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE= [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    #'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -83,8 +83,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'regdesk',
-        'USER': 'regdesk',
-        'PASSWORD': 'chunin',
+        'USER': 'postgres',
+        'PASSWORD': 'letitroll',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -131,6 +131,6 @@ PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (                                                                 
-  os.path.join(BASE_DIR, 'Static/'),                                                
+  os.path.join(BASE_DIR, 'Static'),                                                
   BASE_DIR                                                                          
 ) 
